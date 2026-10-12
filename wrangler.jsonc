@@ -1,0 +1,19 @@
+{
+  "name": "secure-worker",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-03-07",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  "routes": [
+    { "pattern": "tunnel.jasonrosner.online/secure*", "custom_domain": false }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "MY_BUCKET",
+      "bucket_name": "flags-bucket"
+    }
+  ]
+}
